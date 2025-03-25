@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     public float xRange = 10;
     public float zRange = 10;
     public GameObject projectilePrefab;
-    public static int lives = 3;
-    public static int score = 0;
-    public static bool isGameOver = false;
+    public static int lives = 3; // Lives of the player
+    public static int score = 0; // Score of the player
+    public static bool isGameOver = false; // Bool of game over
 
     // Start is called before the first frame update
     void Start()
@@ -33,20 +33,20 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < -xRange) 
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
+        }// Border for the player left
         if (transform.position.x > xRange) 
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
+        }// Border for the player right
 
         if (transform.position.z < 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        }
+        } // Border for the player Bottom
         if (transform.position.z > zRange) 
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
-        }
+        }  // Border for the player Top
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
